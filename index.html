@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Q1 -->
+    <h1>1. Sử dụng Alert để hiển thị Message</h1>
+    <h2>The alert() Method</h2>
+    <p>Ckick vào nút để hiện thị tin nhắn.</p>
+    <button id="btn-click"> Click</button>
+
+    <script>
+        document.getElementById("btn-click").onclick = showClick ;
+        function showClick(){
+            alert(" Chào mừng bạn đến với ứng dụng JavaScript đầu tiên.");
+        }
+    </script>
+
+    <!-- Q2 -->
+    <h1>2. Sử dụng prompt để yêu cầu người dùng nhập tên</h1>
+    <h2> The prompt() Method</h2>
+    <p>Ckick vào nút để nhập tên: </p>
+    <button id="btn-prompt"> Click-Prompt</button>
+    <p id="name1"></p>
+
+    <script>
+        document.getElementById("btn-prompt").onclick = showName ;
+
+        function showName(){
+            let letClick = true;
+            while(letClick){
+                let name = prompt(" Hãy nhập tên của bạn:", "name...");
+                if ( name == null || name == "" ) {
+                    alert(" Nhập tên bạn vào đi, đừng có điêu!");
+                } else{
+                    document.getElementById("name1").innerHTML = " Hello " + name + "!" ;   
+                    letClick = false;            
+                }
+            }
+        }
+    </script>
+
+    <!-- Q4 -->
+    <p>Ckick vào nút để nhập tên Thành phố: </p>
+    <button id="btn-city"> Click-City</button>
+    <p id="city"></p>
+
+    <script>
+        document.getElementById("btn-city").onclick = showCity ;
+
+        function showCity(){
+            let letClick = true;
+            while(letClick){
+                let city = prompt(" Hãy nhập tên của bạn:", "city...");
+                if ( city == null || city == "" ) {
+                    alert(" Nhập tên thành phố vào đi, đừng có điêu!");
+                } else{
+                    document.getElementById("city").innerHTML = " Thành phố: " + city ;   
+                    letClick = false;            
+                }
+            }
+        }
+    </script>
+    <!-- Phone -->
+
+    <p>Ckick vào nút để nhập Số điện thoại: </p>
+    <button id="btn-phone"> Click-Phone</button>
+    <p id="phone"></p>
+
+    <script>
+        document.getElementById("btn-phone").onclick = showPhone ;
+
+        function showPhone(){
+            let letClick = true;
+            while(letClick){
+                let city = prompt(" Hãy nhập số điện thoại của bạn:", "phone...");
+                if ( phone == null || phone == "" ) {
+                    alert(" Nhập số điện thoại bạn vào đi, đừng có điêu!");
+                } else{
+                    document.getElementById("phone").innerHTML = " Số điện thoại: " + phone ;   
+                    letClick = false;            
+                }
+            }
+        }
+    </script>
+
+    <!-- year -->
+
+    <p>Ckick vào nút để nhập Năm sinh: </p>
+    <button id="btn-year"> Click-Year</button>
+    <p id="year"></p>
+
+    <script>
+        document.getElementById("btn-year").onclick = showYear ;
+
+        function showYear(){
+            let letClick = true;
+            while(letClick){
+                let year = prompt(" Hãy nhập năm sinh của bạn:", "phone...");
+                let now = new Date().getFullYear();
+                if ( year > now ) {
+                    alert(" Nhập năm sinh của bạn vào đi, đừng có điêu!");
+                } else{
+                    document.getElementById("year").innerHTML = " Năm sinh: " + year ;   
+                    letClick = false;            
+                }
+            }
+        }
+    </script>
+
+    <!-- Q5 -->
+    <div style="display: grid; grid-template-columns: auto auto auto auto;">
+        <div>
+            <h1>5. Display</h1>
+            <p>Nhấn nút để hiển thị điều thú vị:</p>
+            <button id="btn-show"> Hiện</button>
+            <button id="btn-hide"> Ẩn</button>
+        </div>
+        <div id="showSpr" style="display: none;  "> 
+            <h1 style="border-style: inset ;"> Hế's lô Hơ's LY LY</h1>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-show").onclick = showShow ;
+        function showShow(){
+            document.getElementById("showSpr").style = " display: inline !important;"
+        }
+
+        document.getElementById("btn-hide").onclick = showHide ;
+        function showHide(){
+            document.getElementById("showSpr").style = "display: none  !important;"
+        }
+    </script>
+
+<!-- Rút gọn -->
+    <h1>*Nhập 1 lần: </h1>
+    <button id="btn-1"> Nhấn để nhập</button>
+
+    <script language="JavaScript">
+        document.getElementById("btn-1").onclick = showShort ;
+        var name;
+        var city;
+        var phone;
+        var year;
+
+        function showShort(){
+            name   = prompt("Tên của bạn là:");
+            city   = prompt("Thành phố của bạn là:");
+            phone  = prompt("Số điện thoại của bạn là:");
+            year   = prompt("Năm sinh của bạn là:");
+    
+            document.write("Tên của bạn là: " + name + "<br/>");
+            document.write("Thành phố của bạn là: " + city + "<br/>");
+            document.write("Số điện thoại của bạn là: " + phone + "<br/>");
+            document.write("Năm sinh của bạn là: " + year + "<br/>");
+        }
+
+    </script>
+
+</body>
+</html>
